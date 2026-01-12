@@ -1,0 +1,270 @@
+
+/*  Just a test to see if it's working...
+body { background: hotpink !important; }  */
+
+/* =========================================================
+   NPS Week 01 - style.css
+   ---------------------------------------------------------
+   If styles "do nothing", your CSS is not being loaded.
+   Make sure ONE of these is true:
+   1) index.html <head> includes:
+      <link rel="stylesheet" href="./style.css" />
+   OR
+   2) main.js includes:
+      import "./style.css";
+   ========================================================= */
+
+/* ---- Design tokens (simple starter palette) ---- */
+:root {
+  --black: #000;
+  --white: #fff;
+  --text: #1a1a1a;
+  --shadow: rgba(0, 0, 0, 0.6);
+
+  --header-height-pad-y: 0.75rem;
+  --header-pad-x: 1rem;
+
+  --icon-size: 20px;
+}
+
+/* ---- Reset / base ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 18px;      /* instructor note: bump base size */
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--white);
+}
+
+a {
+  color: inherit;
+}
+
+/* Make all images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Utility: visually hidden text (for accessibility) ---- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Disclaimer ----
+   Your assignment mentions updating the link inside this area dynamically later.
+   This styles it lightly so it doesn't scream on the page.
+*/
+.disclaimer {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ---- Skip links ----
+   These are typically hidden until focused via keyboard (Tab).
+   Your project may already have this elsewhere; if so, keep whichever is better.
+*/
+.skip-links {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 9999;
+}
+
+.skip-links a {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.skip-links a:focus {
+  left: 0;
+}
+
+/* =========================================================
+   GLOBAL HEADER (black bar with NPS title + icons)
+   ========================================================= */
+.global-header {
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--header-height-pad-y) var(--header-pad-x);
+}
+
+/* Left side: "National Park Service" link */
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* If you later style .logo as an image, this is a placeholder */
+.logo {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Your H1 is inside the link */
+.site-title h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Right side: search + menu */
+.global-header__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* SVG icon sizing */
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: currentColor;
+}
+
+/* Search link */
+.search-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Menu button */
+#global-nav-toggle {
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  font: inherit;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  padding: 0.25rem 0.5rem;
+}
+
+/* =========================================================
+   HERO BANNER (image + title overlay)
+   ========================================================= */
+.hero-banner {
+  position: relative;
+}
+
+/* This matches the class we added to your <img> */
+.hero-banner__image {
+  width: 100%;
+  height: 280px;     /* adjust: try 240–360 */
+  object-fit: cover; /* keeps the image looking good */
+}
+
+/* Overlay text */
+.hero-banner__content {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: var(--white);
+
+  /* Makes text readable on bright parts of image */
+  text-shadow: 0 2px 10px var(--shadow);
+}
+
+.hero-banner__title {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-banner__subtitle {
+  margin: 0.25rem 0 0;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   PARK NAV (Info / Alerts / Maps / Calendar / Fees)
+   Mobile first: a row of evenly spaced items
+   ========================================================= */
+.park-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  /* if it gets tight on small screens, allow wrapping */
+  flex-wrap: wrap;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.park-nav a {
+  text-decoration: none;
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  min-width: 72px; /* helps keep spacing reasonable */
+  padding: 0.25rem 0.5rem;
+}
+
+.park-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Make nav labels a touch smaller */
+.park-nav span {
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   Responsive tweaks (optional)
+   ========================================================= */
+@media (min-width: 700px) {
+  .hero-banner__image {
+    height: 360px;
+  }
+
+  .hero-banner__title {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,178 @@
+
+<!-- https://akkaris1.netlify.app/ -->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title (we can update dynamically later with JS) -->
+    <title>National Park Service</title>
+
+    <!-- IMPORTANT: this is what loads my CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- ======================================================
+         DISCLAIMER (assignment: this link will be updated by JS)
+         ====================================================== -->
+    <p class="disclaimer">
+      <a href="https://www.nps.gov/yell/index.htm">Yellowstone National Park</a>
+    </p>
+
+    <!-- ======================================================
+         SKIP LINKS (keyboard accessibility)
+         ====================================================== -->
+    <div class="skip-links" aria-label="short-cut links" role="navigation">
+      <a class="skip-links__link" href="#park-header">Skip to park header</a>
+      <a class="skip-links__link" href="#main">Skip to main content</a>
+      <a class="skip-links__link" href="#park-footer">Skip to footer</a>
+    </div>
+
+    <!-- ======================================================
+         HEADER AREA
+         - global-header: common across all NPS pages
+         - park-header: specific to the park
+         ====================================================== -->
+    <header>
+      <!-- ========== GLOBAL HEADER ========== -->
+      <section class="global-header">
+        <a href="index.html" class="site-title">
+          <span class="logo" role="presentation"></span>
+          <h1>National Park Service</h1>
+        </a>
+
+        <div class="global-header__right">
+          <a class="search-icon" href="#park-footer">
+            <svg class="icon" aria-hidden="true">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#search"
+              ></use>
+            </svg>
+            <span class="visually-hidden">Search</span>
+          </a>
+
+          <!-- Note: menu dropdown not required this week -->
+          <button id="global-nav-toggle" type="button">
+            <svg class="icon" aria-hidden="true">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#menu"
+              ></use>
+            </svg>
+            <span class="visually-hidden">Open</span> Menu
+          </button>
+        </div>
+      </section>
+
+      <!-- ========== PARK HEADER ========== -->
+      <section id="park-header">
+        <!-- HERO (image + overlay text) -->
+        <div class="hero-banner">
+          <img
+            class="hero-banner__image"
+            src="https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg"
+            alt="Yellowstone landscape"
+          />
+
+          <div class="hero-banner__content">
+            <a href="#" class="hero-banner__title">Yellowstone</a>
+            <p class="hero-banner__subtitle">
+              <span>National Park</span>
+              <span>ID, MT, WY</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- PARK NAV (icons + labels) -->
+        <nav class="park-nav" aria-label="Park shortcuts">
+          <ul>
+            <li>
+              <a href="#">
+                <span>Info</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#info"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Alerts</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#alert"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Maps</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#location"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Calendar</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#calendar"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Fees</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#fee-22"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <!-- ======================================================
+         MAIN CONTENT (empty for now — later weeks fill this)
+         ====================================================== -->
+    <main id="main">
+      <!-- Content will go here later -->
+    </main>
+
+    <!-- ======================================================
+         FOOTER (empty placeholder for now)
+         ====================================================== -->
+    <footer id="park-footer">
+      <!-- Footer will go here later -->
+    </footer>
+
+    <!-- ======================================================
+         JS ENTRY POINT
+         IMPORTANT: type="module" so ES Modules work in Vite
+         ====================================================== -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
