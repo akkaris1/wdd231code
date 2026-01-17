@@ -254,7 +254,13 @@ img {
 /* Make nav labels a touch smaller */
 .park-nav span {
   font-size: 0.9rem;
+}  
+
+#park-footer {
+  background-image: url("./images/topo.png"); /* or whatever you name it */
+  background-repeat: repeat;
 }
+
 
 /* =========================================================
    Responsive tweaks (optional)
@@ -267,4 +273,61 @@ img {
   .hero-banner__title {
     font-size: 2.4rem;
   }
+}
+
+/* =========================================================
+   Starting points...bones
+   ========================================================= */
+
+   .intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.intro h1 {
+  margin: 0 0 0.75rem 0;
+}
+
+.info {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.media-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.media-card a {
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.media-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Larger screens */
+@media (min-width: 700px) {
+  .info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#park-footer {
+  padding: 2rem 1rem;
+  /* you'll add the topo background-image here */
+}
+
+.contact {
+  max-width: 1100px;
+  margin: 0 auto;
 }

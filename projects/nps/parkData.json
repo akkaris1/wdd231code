@@ -1,0 +1,69 @@
+
+
+{
+  "url": "https://www.nps.gov/yell/index.htm",
+  "name": "Yellowstone",
+  "fullName": "Yellowstone National Park",
+  "designation": "National Park",
+  "states": "ID, MT, WY",
+  "description": "This is placeholder park data so the assignment can run. Replace this file with the official dataset from your course starter files when you recover it.",
+  "images": [
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    },
+    {
+      "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      "altText": "Park landscape"
+    }
+  ],
+  "addresses": [
+    {
+      "type": "Mailing",
+      "line1": "REPLACE WITH OFFICIAL MAILING ADDRESS",
+      "city": "REPLACE_CITY",
+      "stateCode": "REPLACE_STATE",
+      "postalCode": "REPLACE_ZIP"
+    }
+  ],
+  "contacts": {
+    "phoneNumbers": [
+      {
+        "type": "Voice",
+        "phoneNumber": "REPLACE_PHONE"
+      }
+    ]
+  }
+}
