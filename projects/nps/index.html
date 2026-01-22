@@ -1,6 +1,5 @@
-
 <!-- https://akkaris1.netlify.app/ -->
-
+ <!-- -->
 
 <!doctype html>
 <html lang="en">
@@ -8,16 +7,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Page title (we can update dynamically later with JS) -->
+    <!-- Page title (will be updated dynamically by JS) -->
     <title>National Park Service</title>
 
-    <!-- IMPORTANT: this is what loads my CSS -->
+    <!-- this is what loads the CSS -->
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <!-- ======================================================
-         DISCLAIMER (assignment: this link will be updated by JS)
+         DISCLAIMER (this link will be updated by JS)
          ====================================================== -->
     <p class="disclaimer">
       <a href="https://www.nps.gov/yell/index.htm">Yellowstone National Park</a>
@@ -25,6 +24,7 @@
 
     <!-- ======================================================
          SKIP LINKS (keyboard accessibility)
+         These allow keyboard users to jump to main sections
          ====================================================== -->
     <div class="skip-links" aria-label="short-cut links" role="navigation">
       <a class="skip-links__link" href="#park-header">Skip to park header</a>
@@ -38,7 +38,7 @@
          - park-header: specific to the park
          ====================================================== -->
     <header>
-      <!-- ========== GLOBAL HEADER ========== -->
+      <!-- ========== GLOBAL HEADER (black bar at top) ========== -->
       <section class="global-header">
         <a href="index.html" class="site-title">
           <span class="logo" role="presentation"></span>
@@ -46,6 +46,7 @@
         </a>
 
         <div class="global-header__right">
+          <!-- Search icon -->
           <a class="search-icon" href="#park-footer">
             <svg class="icon" aria-hidden="true">
               <use
@@ -56,7 +57,7 @@
             <span class="visually-hidden">Search</span>
           </a>
 
-          <!-- Note: menu dropdown not required this week -->
+          <!-- Menu button (dropdown functionality not required this week) -->
           <button id="global-nav-toggle" type="button">
             <svg class="icon" aria-hidden="true">
               <use
@@ -71,7 +72,7 @@
 
       <!-- ========== PARK HEADER ========== -->
       <section id="park-header">
-        <!-- HERO (image + overlay text) -->
+        <!-- HERO BANNER (large image with park name overlay) -->
         <div class="hero-banner">
           <img
             class="hero-banner__image"
@@ -79,6 +80,7 @@
             alt="Yellowstone landscape"
           />
 
+          <!-- This content will be replaced by JavaScript -->
           <div class="hero-banner__content">
             <a href="#" class="hero-banner__title">Yellowstone</a>
             <p class="hero-banner__subtitle">
@@ -88,7 +90,7 @@
           </div>
         </div>
 
-        <!-- PARK NAV (icons + labels) -->
+        <!-- PARK NAV (Info, Alerts, Maps, Calendar, Fees) -->
         <nav class="park-nav" aria-label="Park shortcuts">
           <ul>
             <li>
@@ -113,3 +115,78 @@
                   ></use>
                 </svg>
               </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Maps</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#map"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Calendar</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#calendar"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>Fees</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#fees"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <!-- ======================================================
+         MAIN CONTENT
+         ====================================================== -->
+    <main id="main">
+      <!-- Park introduction (name and description) -->
+      <!-- This section will be populated by JavaScript -->
+      <section class="intro">
+        <!-- JS will insert content here -->
+      </section>
+
+      <!-- Three info cards (Current Conditions, Fees, Visitor Centers) -->
+      <!-- These will be populated by JavaScript -->
+      <section class="info">
+        <!-- JS will insert cards here -->
+      </section>
+    </main>
+
+    <!-- ======================================================
+         FOOTER
+         Contact information will be populated by JavaScript
+         ====================================================== -->
+    <footer id="park-footer">
+      <!-- JS will insert contact info here -->
+    </footer>
+
+    <!-- ======================================================
+         JAVASCRIPT
+         This loads and runs our main.js file
+         The "type=module" allows us to use ES6 imports
+         ====================================================== -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

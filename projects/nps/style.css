@@ -257,7 +257,9 @@ img {
 }  
 
 #park-footer {
-  background-image: url("./images/topo.png"); /* or whatever you name it */
+  /*background-image: url("./images/topo.png"); /* or whatever you name it */
+  background-color: #1f2a2e;
+
   background-repeat: repeat;
 }
 
