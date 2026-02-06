@@ -1,5 +1,4 @@
 
-
 <!-- https://akkaris1.netlify.app/ -->
  <!-- -->
 
@@ -31,7 +30,6 @@
     <div class="skip-links" aria-label="short-cut links" role="navigation">
       <a class="skip-links__link" href="#park-header">Skip to park header</a>
       <a class="skip-links__link" href="#main">Skip to main content</a>
-
       <a class="skip-links__link" href="#park-footer">Skip to footer</a>
     </div>
 
@@ -164,16 +162,24 @@
          MAIN CONTENT
          ====================================================== -->
     <main id="main">
-      <!-- Park introduction (name and description) -->
-      <!-- This section will be populated by JavaScript -->
-      <section class="intro">
-        <!-- JS will insert content here -->
+      <h1>Current Conditions</h1>
+      <section class="alerts">
+        <h2>Alerts</h2>
+        <ul></ul>
       </section>
-
-      <!-- Three info cards (Current Conditions, Fees, Visitor Centers) -->
-      <!-- These will be populated by JavaScript -->
-      <section class="info">
-        <!-- JS will insert cards here -->
+      <section class="visitor">
+        <h2>Visitor Services</h2>
+        <details name="current-details">
+          <summary>Visitor Centers</summary>
+          <ul></ul>
+        </details>
+      </section>
+      <section class="activities">
+        <h2>Activities</h2>
+        <details name="current-details">
+          <summary>All Activities</summary>
+          <ul></ul>
+        </details>
       </section>
     </main>
 
@@ -187,9 +193,9 @@
 
     <!-- ======================================================
          JAVASCRIPT
-         This loads and runs our main.js file
+         This loads and runs our conditions.js file
          The "type=module" allows us to use ES6 imports
          ====================================================== -->
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./conditions.js"></script>
   </body>
 </html>

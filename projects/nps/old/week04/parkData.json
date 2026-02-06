@@ -5,21 +5,8 @@
   "name": "Yellowstone",
   "fullName": "Yellowstone National Park",
   "designation": "National Park",
-  "parkCode": "yell",
   "states": "ID, MT, WY",
   "description": "This is placeholder park data so the assignment can run. Replace this file with the official dataset from your course starter files when you recover it.",
-  "activities": [
-    { "name": "Hiking" },
-    { "name": "Wildlife Viewing" },
-    { "name": "Photography" },
-    { "name": "Camping" },
-    { "name": "Fishing" },
-    { "name": "Horseback Riding" },
-    { "name": "Scenic Driving" },
-    { "name": "Birdwatching" },
-    { "name": "Skiing" },
-    { "name": "Snowshoeing" }
-  ],
   "images": [
     {
       "url": "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",

@@ -1,5 +1,3 @@
-
-
 // templates.mjs
 // This file contains all the HTML template functions used to generate
 // dynamic content on the page
@@ -75,53 +73,4 @@ export function footerTemplate(info) {
     <h4>Phone:</h4>
     <p>${voice}</p>
   </section>`;
-}
-
-/**
- * alertTemplate - Generates HTML for an alert item
- * @param {Object} alert - Alert object containing category, title, and description
- * @returns {string} HTML string for an alert list item
- */
-export function alertTemplate(alert) {
-  let alertType = "";
-  // most of the alerts are one word and line up with the icons nicely. "Park Closure" is the exception
-  switch (alert.category) {
-    case "Park Closure":
-      alertType = "closure";
-      break;
-    default:
-      alertType = alert.category.toLowerCase();
-  }
-  return `<li class="alert">
-  <svg class="icon" focusable="false" aria-hidden="true">
-    <use xlink:href="/images/sprite.symbol.svg#alert-${alertType}"></use>
-  </svg>
-  <div>
-    <h3 class="alert-${alertType}">${alert.title}</h3>
-    <p>${alert.description}</p>
-  </div></li>`;
-}
-
-/**
- * visitorCenterTemplate - Generates HTML for a visitor center item
- * @param {Object} center - Visitor center object containing name, description, and directionsInfo
- * @returns {string} HTML string for a visitor center list item
- */
-export function visitorCenterTemplate(center) {
-  return `<li class="visitor-center">
-    <h3>${center.name}</h3>
-    <p>${center.description}</p>
-    <p><strong>Directions:</strong> ${center.directionsInfo}</p>
-  </li>`;
-}
-
-/**
- * activityTemplate - Generates HTML for an activity item
- * @param {Object} activity - Activity object containing name
- * @returns {string} HTML string for an activity list item
- */
-export function activityTemplate(activity) {
-  return `<li class="activity">
-    <h3>${activity.name}</h3>
-  </li>`;
 }
