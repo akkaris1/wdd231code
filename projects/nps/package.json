@@ -8,7 +8,9 @@
   "scripts": {
     "start": "vite --host 127.0.0.1",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "lint-fix": "eslint *.js src/**/*.js --fix"
   },
   "keywords": [],
   "author": "",

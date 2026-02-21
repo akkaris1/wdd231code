@@ -60,18 +60,77 @@
             <span class="visually-hidden">Search</span>
           </a>
 
-          <!-- Menu button (dropdown functionality not required this week) -->
-          <button id="global-nav-toggle" type="button">
-            <svg class="icon" aria-hidden="true">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="/images/sprite.symbol.svg#menu"
-              ></use>
-            </svg>
-            <span class="visually-hidden">Open</span> Menu
+          <!-- Menu button (toggles nav open/closed) -->
+          <button
+            id="global-nav-toggle"
+            class="global-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Open Menu"
+          >
+            <!-- Shown when menu is closed -->
+            <div class="global-nav__toggle--closed">
+              <svg class="icon" aria-hidden="true">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#menu"
+                ></use>
+              </svg>
+              <span class="visually-hidden">Open</span> Menu
+            </div>
+            <!-- Shown when menu is open -->
+            <div class="global-nav__toggle--open">
+              <svg class="icon" aria-hidden="true">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#close"
+                ></use>
+              </svg>
+              Close
+            </div>
           </button>
         </div>
       </section>
+
+      <!-- ========== GLOBAL NAV (dropdown menu) ========== -->
+      <nav class="global-nav" aria-label="Global navigation">
+        <h2 class="global-nav__section-heading">Explore this Park</h2>
+        <ul class="global-nav__list">
+          <li>
+            <div class="global-nav__split-button">
+              <a href="#">Plan Your Visit</a>
+              <button class="global-nav__split-button__toggle">
+                <span class="visually-hidden">Toggle submenu for Plan Your Visit</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="global-nav__split-button">
+              <a href="#">Learn About the Park</a>
+              <button class="global-nav__split-button__toggle">
+                <span class="visually-hidden">Toggle submenu for Learn About the Park</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div class="global-nav__split-button">
+              <a href="#">Get Involved</a>
+              <button class="global-nav__split-button__toggle">
+                <span class="visually-hidden">Toggle submenu for Get Involved</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </nav>
 
       <!-- ========== PARK HEADER ========== -->
       <section id="park-header">

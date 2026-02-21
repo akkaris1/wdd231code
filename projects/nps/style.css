@@ -333,3 +333,93 @@ img {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+/* =========================================================
+   GLOBAL NAV (dropdown menu, mobile-first)
+   ========================================================= */
+
+/* Hidden by default using max-height trick so we can animate */
+.global-nav {
+  width: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* When .show is added by JS, the menu slides open */
+.global-nav.show {
+  max-height: 1000px;
+}
+
+.global-nav__section-heading {
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #aaa;
+  border-bottom: 1px solid #333;
+}
+
+.global-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Split button: link + toggle arrow side by side */
+.global-nav__split-button {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #333;
+}
+
+.global-nav__split-button a {
+  flex: 1;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.global-nav__split-button a:hover {
+  text-decoration: underline;
+}
+
+.global-nav__split-button__toggle {
+  background-color: transparent;
+  border: 0;
+  border-left: 1px solid #333;
+  color: var(--white);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.global-nav__split-button__toggle svg {
+  fill: var(--white);
+}
+
+/* ---- Menu toggle button open/close label swap ---- */
+
+/* Closed state: show "Menu", hide "Close" */
+.global-nav__toggle--closed {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.global-nav__toggle--open {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Open state (aria-expanded=true): swap labels */
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--closed {
+  display: none;
+}
+
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--open {
+  display: flex;
+}
