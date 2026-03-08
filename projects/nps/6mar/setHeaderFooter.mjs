@@ -2,8 +2,10 @@
 // This module handles updating the header and footer sections of the page
 // with dynamic park data
 
+// Import the template functions we need
+// FIXED: Was importing from non-existent "somewhereYouHaveIt.mjs"
+// Now correctly imports parkInfoTemplate from templates.mjs
 import { parkInfoTemplate, footerTemplate } from "./templates.mjs";
-import enableNavigation from "./navigation.mjs";
 
 /**
  * setHeaderInfo - Updates all the header elements with park data
@@ -54,5 +56,4 @@ function setFooter(data) {
 export default function setHeaderFooter(data) {
   setHeaderInfo(data);
   setFooter(data);
-  enableNavigation();
 }

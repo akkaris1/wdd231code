@@ -18,7 +18,6 @@ function setParkInfoLinks(data) {
 
 async function init() {
   const parkData = await getParkData();
-  // setHeaderFooter now also calls enableNavigation internally
   setHeaderFooter(parkData);
   setParkIntro(parkData);
   setParkInfoLinks(parkInfoLinks);
