@@ -105,3 +105,35 @@ export async function getVisitorCenterData(parkCode) {
   }
 }
 
+
+/**
+ * getParkVisitorCenterDetails - fetches a single visitor center by its id
+ * Uses the undocumented but functional ?id= query param on the visitorcenters endpoint.
+ * @param {string} id - the visitor center id from the URL search param
+ */
+export async function getParkVisitorCenterDetails(id) {
+  const apiKey = import.meta.env.VITE_NPS_API_KEY;
+
+  if (!apiKey) {
+    // Return sample data so the page still renders without an API key
+    return {
+      id,
+      name: "Sample Visitor Center",
+      description: "Configure your NPS API key to see real visitor center data.",
+      directionsInfo: "Directions not available in sample mode.",
+      images: [],
+      addresses: [],
+      contacts: { phoneNumbers: [], emailAddresses: [] },
+      amenities: [],
+    };
+  }
+
+  try {
+    const url = `https://developer.nps.gov/api/v1/visitorcenters?id=${id}`;
+    const data = await getJson(url, apiKey);
+    return data?.data?.[0] || null;
+  } catch (err) {
+    console.warn("Could not fetch visitor center details:", err);
+    return null;
+  }
+}

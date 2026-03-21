@@ -1,0 +1,241 @@
+/* visitor-center.css
+   Styles specific to the visitor center detail page (visitor-center.html)
+   Imported by visitor-center.js along with style.css
+*/
+
+/* =========================================================
+   PAGE WRAPPER / MAX WIDTH
+   ========================================================= */
+#main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* =========================================================
+   PAGE TITLE  (h1 + ranger-station icon)
+   ========================================================= */
+.vc-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.8rem;
+  margin: 0 0 1.25rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.75rem;
+}
+
+.vc-title .icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  fill: #1a6027; /* NPS green-ish */
+}
+
+/* =========================================================
+   GENERAL INFO  (hero image + description)
+   ========================================================= */
+.vc-info {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.vc-hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.vc-info p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@media (min-width: 700px) {
+  .vc-info {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* =========================================================
+   ACCORDIONS SECTION
+   ========================================================= */
+.vc-accordions {
+  margin-bottom: 2.5rem;
+}
+
+/* Override the shared details styling from conditions.css for this page */
+.vc-accordions details {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.vc-accordions summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  background-color: #f4f4f4;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  list-style: none; /* removes the default triangle in Firefox */
+}
+
+/* Remove the default disclosure triangle in WebKit / Blink */
+.vc-accordions summary::-webkit-details-marker {
+  display: none;
+}
+
+.vc-accordions summary .icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  fill: #1a6027;
+}
+
+.vc-accordions summary:hover {
+  background-color: #e8e8e8;
+}
+
+.vc-accordions details[open] summary {
+  border-bottom: 1px solid #ccc;
+  background-color: #e8e8e8;
+}
+
+/* Inner padding for accordion content */
+.vc-accordions details > *:not(summary) {
+  padding: 1rem 1.25rem;
+}
+
+/* =========================================================
+   ADDRESS BLOCK
+   ========================================================= */
+.vc-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-style: normal;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.vc-address .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  fill: #555;
+}
+
+/* =========================================================
+   DIRECTIONS
+   ========================================================= */
+.vc-directions {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   AMENITIES LIST
+   ========================================================= */
+.vc-accordions #vcAmenities ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.vc-accordions #vcAmenities li {
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================================
+   CONTACT LIST
+   ========================================================= */
+.vc-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vc-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.vc-contact-list .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: #555;
+}
+
+.vc-contact-list a {
+  color: #1a6027;
+  text-decoration: none;
+}
+
+.vc-contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   IMAGE GALLERY
+   ========================================================= */
+.vc-gallery {
+  margin-top: 2.5rem;
+}
+
+.vc-gallery h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.vc-gallery h2 .icon {
+  width: 26px;
+  height: 26px;
+  fill: #1a6027;
+}
+
+.vc-gallery ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.vc-gallery li {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.vc-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* crops to square, no distortion */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.vc-gallery img:hover {
+  transform: scale(1.04);
+}

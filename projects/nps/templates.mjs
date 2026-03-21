@@ -109,7 +109,7 @@ export function alertTemplate(alert) {
  */
 export function visitorCenterTemplate(center) {
   return `<li class="visitor-center">
-    <h3>${center.name}</h3>
+    <h3><a href="visitor-center.html?id=${center.id}">${center.name}</a></h3>
     <p>${center.description}</p>
     <p><strong>Directions:</strong> ${center.directionsInfo}</p>
   </li>`;
@@ -124,4 +124,135 @@ export function activityTemplate(activity) {
   return `<li class="activity">
     <h3>${activity.name}</h3>
   </li>`;
+}
+
+// =========================================================
+// VISITOR CENTER DETAIL PAGE TEMPLATES
+// =========================================================
+
+/**
+ * vcPageTitleTemplate - renders the page's h1
+ */
+export function vcPageTitleTemplate(center) {
+  return `<h1 class="vc-title">
+    <svg class="icon" role="presentation" focusable="false">
+      <use xlink:href="/images/sprite.symbol.svg#ranger-station"></use>
+    </svg>
+    ${center.name}
+  </h1>`;
+}
+
+/**
+ * vcGeneralInfoTemplate - hero image + description paragraph
+ */
+export function vcGeneralInfoTemplate(center) {
+  const img = center.images?.[0];
+  const imgHtml = img
+    ? `<img src="${img.url}" alt="${img.altText}" class="vc-hero-img">`
+    : "";
+  return `<section class="vc-info">
+    ${imgHtml}
+    <p>${center.description}</p>
+  </section>`;
+}
+
+/**
+ * vcDetailsBoxTemplate - reusable <details> accordion block.
+ * @param {string} id       - unique id for the element
+ * @param {string} iconId   - sprite icon id
+ * @param {string} summary  - label shown in the summary bar
+ * @param {string} content  - inner HTML (already-built string)
+ */
+export function vcDetailsBoxTemplate(id, iconId, summary, content) {
+  return `<details name="vc-details" id="${id}">
+    <summary>
+      <svg class="icon" role="presentation" focusable="false">
+        <use xlink:href="/images/sprite.symbol.svg#${iconId}"></use>
+      </svg>
+      ${summary}
+    </summary>
+    ${content}
+  </details>`;
+}
+
+/**
+ * listTemplate - generic list builder.
+ * @param {Array}    data            - array of items
+ * @param {Function} contentTemplate - function that turns one item into an <li> string
+ */
+export function listTemplate(data, contentTemplate) {
+  const html = data.map(contentTemplate);
+  return `<ul>${html.join("")}</ul>`;
+}
+
+/** Single image <li> for the gallery */
+export function vcImageTemplate(image) {
+  return `<li><img src="${image.url}" alt="${image.altText}"></li>`;
+}
+
+/** Single amenity <li> */
+export function vcAmenityTemplate(amenity) {
+  return `<li>${amenity}</li>`;
+}
+
+/**
+ * vcAddressTemplate - builds the address content for the accordion
+ */
+export function vcAddressTemplate(center) {
+  const addrs = center.addresses || [];
+  if (!addrs.length) return "<p>No address information available.</p>";
+  return addrs
+    .map(
+      (a) => `<address class="vc-address">
+        <svg class="icon" role="presentation" focusable="false">
+          <use xlink:href="/images/sprite.symbol.svg#heading-icon_map-pin"></use>
+        </svg>
+        <span>
+          <strong>${a.type}</strong><br>
+          ${a.line1}<br>
+          ${a.city}, ${a.stateCode} ${a.postalCode}
+        </span>
+      </address>`
+    )
+    .join("");
+}
+
+/**
+ * vcContactTemplate - builds the contact content for the accordion
+ */
+export function vcContactTemplate(center) {
+  const phones = center.contacts?.phoneNumbers || [];
+  const emails = center.contacts?.emailAddresses || [];
+  const phone = phones[0]?.phoneNumber ?? "N/A";
+  const email = emails[0]?.emailAddress ?? "N/A";
+  return `<ul class="vc-contact-list">
+    <li>
+      <svg class="icon" role="presentation" focusable="false">
+        <use xlink:href="/images/sprite.symbol.svg#phone"></use>
+      </svg>
+      <a href="tel:${phone}">${phone}</a>
+    </li>
+    <li>
+      <svg class="icon" role="presentation" focusable="false">
+        <use xlink:href="/images/sprite.symbol.svg#heading-icon_info"></use>
+      </svg>
+      <a href="mailto:${email}">${email}</a>
+    </li>
+  </ul>`;
+}
+
+/**
+ * vcImageGalleryTemplate - full gallery section
+ */
+export function vcImageGalleryTemplate(center) {
+  if (!center.images?.length) return "";
+  return `<section class="vc-gallery">
+    <h2>
+      <svg class="icon" role="presentation" focusable="false">
+        <use xlink:href="/images/sprite.symbol.svg#camera-alt"></use>
+      </svg>
+      Image Gallery
+    </h2>
+    ${listTemplate(center.images, vcImageTemplate)}
+  </section>`;
 }
